@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4eddf">
+    <meta name="description" content="The official digital storybook for Skiddo and the Oscroh Queens.">
+    <title>Skiddo and the Oscroh Queens</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="cover-screen" id="cover-screen" aria-labelledby="book-title">
+        <div class="cover-screen__inner">
+          <div class="cover-art">
+            <img
+              class="cover-art__image"
+              src="assets/official-cover.jpe"
+              alt="Official cover artwork for Skiddo and the Oscroh Queens"
+            >
+            <span class="cover-art__caption">Official cover artwork</span>
+          </div>
+
+          <div class="cover-intro">
+            <p class="eyebrow">An original illustrated storybook</p>
+            <h1 id="book-title">Skiddo <span>and the</span> Oscroh Queens</h1>
+            <p class="cover-year">OVIE 2023</p>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="cover-intro__note">A storybook experience, made for the page.</p>
+            <div class="cover-actions">
+              <button class="button button--primary" type="button" data-open-book="reader">
+                Enter the story
+                <span aria-hidden="true">→</span>
+              </button>
+              <button class="button button--quiet" type="button" data-open-book="contents">
+                View contents
+              </button>
+            </div>
+            <p class="cover-intro__credit">The story will unfold here, one chapter at a time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-screen" id="book-screen" aria-label="Storybook" hidden>
+        <header class="book-header">
+          <a class="wordmark" href="#cover" data-show-cover>Skiddo <span>&amp;</span> the Oscroh Queens</a>
+          <nav class="book-nav" aria-label="Book navigation">
+            <button class="nav-button" type="button" data-tab="contents" aria-selected="true">Contents</button>
+            <button class="nav-button" type="button" data-tab="reader" aria-selected="false">Reader</button>
+            <button class="nav-button nav-button--home" type="button" data-show-cover>Cover</button>
+          </nav>
+        </header>
+
+        <div class="book-body">
+          <section class="contents-panel" id="contents-panel" aria-labelledby="contents-title">
+            <p class="eyebrow">The storybook</p>
+            <h2 id="contents-title">Contents</h2>
+            <div class="section-rule" aria-hidden="true"></div>
+            <div class="chapter-list" id="chapter-list" aria-label="Chapters"></div>
+            <div class="contents-note">
+              <span class="contents-note__mark" aria-hidden="true">✦</span>
+              <p>Your story, in the order you tell it.</p>
+            </div>
+          </section>
+
+          <section class="reader-panel" id="reader-panel" aria-labelledby="reader-title" hidden>
+            <div class="reader-heading">
+              <div>
+                <p class="eyebrow" id="reader-chapter-label">The reading room</p>
+                <h2 id="reader-title">The storybook</h2>
+              </div>
+              <button class="mode-button" id="mode-toggle" type="button" aria-pressed="false">
+                <span aria-hidden="true">☷</span>
+                <span id="mode-label">Scrolling mode</span>
+              </button>
+            </div>
+
+            <article class="reader-page" id="reader-page" aria-label="Story page"></article>
+
+            <div class="page-controls" id="page-controls" aria-label="Page navigation">
+              <button class="page-button" id="previous-page" type="button" aria-label="Previous page">← <span>Previous</span></button>
+              <span class="page-count" id="page-count" aria-live="polite"></span>
+              <button class="page-button" id="next-page" type="button" aria-label="Next page"><span>Next</span> →</button>
+            </div>
+            <button class="back-to-contents" type="button" data-tab="contents">← Return to contents</button>
+          </section>
+        </div>
+        <footer class="book-footer">An original story by its author</footer>
+      </section>
+    </main>
+  </body>
+</html>
